@@ -1,0 +1,14 @@
+.sidebar {
+  border-right: 0.5px solid rgb(142, 151, 151);
+  flex: 0.25;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.sidebar--twitter--icon {
+  color: var(--twitter-color);
+  font-size: 30px !important;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
