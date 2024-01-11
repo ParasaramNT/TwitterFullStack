@@ -1,3 +1,4 @@
+import React from "react";
 import SideBarOptions from "../../assets/SideBarOptions";
 import SideNavbarItem from "./SideNavBarComps/SideNavbarItem";
 import TwitterIcon from "@mui/icons-material/Twitter";

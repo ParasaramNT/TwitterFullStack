@@ -24,3 +24,10 @@
 .sidebarOption--active {
   color: var(--twitter-color);
 }
+
+.sidebarOption--active > h2 {
+  padding-top: 10px;
+}
+.sidebarOption > h2 {
+  padding-top: 10px;
+}

@@ -1,0 +1,18 @@
+.widgetItemHappening {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.widgetItemHappening:hover {
+  border-bottom: solid 1px #dce2e2;
+  border-top: solid 1px #dce2e2;
+}
+
+.widgetItemHappening > h3 {
+  padding-top: 5px;
+}
+
+.widgetItemHappening > p {
+  padding-top: 5px;
+}

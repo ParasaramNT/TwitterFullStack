@@ -1,3 +1,4 @@
+import React from "react";
 import "./SideNavBarItem.css";
 
 const SideNavbarItem = ({ text, Icon, active }) => {

@@ -1,0 +1,14 @@
+.widgetsBox {
+  margin-top: 70px;
+  margin-left: 20px;
+  background-color: #f6f9f9;
+  border-radius: 25px;
+  height: fit-content;
+  padding-bottom: 20px;
+}
+
+h2 {
+  padding-left: 10px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}

@@ -1,9 +1,16 @@
+import React from "react";
+import "./Feed.css";
+import TweetBox from "./FeedComps/TweetBox";
+import Post from "./FeedComps/Post";
 const Feed = () => {
   return (
-    <div>
-      <p>header</p>
-      <p>TweetBox</p>
-      <p>Posts</p>
+    <div className="feed">
+      <div className="feed__header">
+        <h2>Home</h2>
+      </div>
+      <TweetBox />
+      <Post />
+      <Post />
     </div>
   );
 };
