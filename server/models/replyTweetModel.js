@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const ReplySchema = new mongoose.Schema({
-  content: {
+  reply: {
     type: String,
     required: true,
   },
-  author: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
