@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
-import Button from "../Common/Button";
+import Button from "../../Common/Button";
 
 const WidgetItemWhoToFollow = () => {
   return (

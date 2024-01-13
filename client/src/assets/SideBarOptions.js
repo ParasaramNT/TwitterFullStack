@@ -11,30 +11,36 @@ const SideBarOptions = [
   {
     text: "Home",
     Icon: HomeIcon,
-    active: true,
+    route: "/",
   },
   {
     text: "Explore",
+    route: "/explore",
     Icon: SearchIcon,
   },
   {
     text: "Notifications",
+    route: "/notifications",
     Icon: NotificationsNoneIcon,
   },
   {
     text: "Messages",
+    route: "/messages",
     Icon: MailOutlineIcon,
   },
   {
     text: "List",
+    route: "/list",
     Icon: ListAltIcon,
   },
   {
     text: "Bookmark",
+    route: "/bookmarks",
     Icon: BookmarkBorderIcon,
   },
   {
     text: "Profile",
+    route: "/profile",
     Icon: PermIdentityIcon,
   },
   {

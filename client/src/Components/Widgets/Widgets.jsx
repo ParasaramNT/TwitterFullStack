@@ -1,6 +1,6 @@
 import React from "react";
 import "./Widgets.css";
-import WidgetBox from "./WidgetBox";
+import WidgetBox from "./WidgetComps/WidgetBox";
 
 const Widgets = () => {
   return (
