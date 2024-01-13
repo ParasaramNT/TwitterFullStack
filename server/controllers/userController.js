@@ -66,6 +66,7 @@ const login = async (req, res) => {
     }
 
     const options = {
+      username: user.username,
       email: user.email,
       id: user._id,
     };
