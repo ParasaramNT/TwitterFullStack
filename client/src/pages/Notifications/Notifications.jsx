@@ -3,7 +3,7 @@ import "./Notifications.css";
 
 const Notifications = () => {
   return (
-    <div>
+    <div className="notificationDiv">
       <h3>Notifications</h3>
     </div>
   );

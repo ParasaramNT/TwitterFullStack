@@ -3,7 +3,7 @@ import "./Explore.css";
 
 const Explore = () => {
   return (
-    <div>
+    <div className="exploreDiv">
       <input type="text" placeholder="Search" className="search"></input>
     </div>
   );

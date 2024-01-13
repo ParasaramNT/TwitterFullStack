@@ -3,11 +3,15 @@ body {
   --twitter-background: #e6ecf0;
 }
 
-.app {
-  display: flex;
-  height: 100vh;
-  width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 10px;
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:-webkit-any-link:visited {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
