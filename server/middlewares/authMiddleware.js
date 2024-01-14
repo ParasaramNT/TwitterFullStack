@@ -4,8 +4,7 @@ dotenv.config();
 
 const auth = async (req, res) => {
   try {
-    const token =
-      req.cookies.token || req.header("Authorization").replace("Bearer", " ");
+    const token = req.cookies.token;
 
     if (!token) {
       res.status(400).json({
@@ -28,6 +27,7 @@ const auth = async (req, res) => {
     return res.status(401).json({
       success: false,
       message: "Something went wrong while verifying token",
+      error: err.message,
     });
   }
 };
