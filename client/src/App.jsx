@@ -9,8 +9,18 @@ import Lists from "./pages/Lists/Lists";
 import Bookmarks from "./pages/Bookmarks/Bookmarks";
 import Profile from "./pages/Profile/Profile";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Signup from "./pages/SignUp/Signup";
+import SignIn from "./pages/SignIn/SignIn";
 
 const router = createBrowserRouter([
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
+  },
   {
     path: "/",
     element: <Home />,

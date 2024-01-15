@@ -2,6 +2,7 @@ const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
+dotenv.config();
 
 const signup = async (req, res) => {
   try {
@@ -77,19 +78,28 @@ const login = async (req, res) => {
       email: user.email,
       id: user._id,
     };
+    console.log("JWT in controller:", process.env.JWT_SECRET);
 
     const token = jwt.sign(options, process.env.JWT_SECRET, {
       expiresIn: "2h",
     });
+    console.log("token in controller", token);
+
+    res.cookie("testcookie", "testvalue", {
+      expires: new Date(Date.now() + 86400000),
+    }); // 24 hours from now
 
     return res
       .cookie("tokencookie", token, {
         expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
         httpOnly: true,
+        path: "/",
+        sameSite: "None",
       })
       .json({
         success: true,
         message: "User successfully logged in",
+        token,
       });
   } catch (err) {
     return res.status(400).json({
@@ -104,7 +114,7 @@ const logoff = async (req, res) => {
   try {
     const email = req.user.email;
     if (!email) {
-      res.status(400).json({
+      return res.status(400).json({
         success: false,
         message: "user already logout out",
       });
@@ -123,9 +133,42 @@ const logoff = async (req, res) => {
   }
 };
 
+const userDetails = async (req, res) => {
+  try {
+    console.log(req.user);
+    const userEmail = req.user.email;
+    if (!userEmail) {
+      return res.status(400).json({
+        success: false,
+        message: "user already logout out",
+      });
+    }
+
+    const userDetails = await User.find({ email: userEmail });
+    if (!userDetails) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "User data",
+      userDetails,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+};
+
 const updateProfile = async (req, res) => {
   try {
   } catch (err) {}
 };
 
-module.exports = { signup, login, logoff, updateProfile };
+module.exports = { signup, login, logoff, updateProfile, userDetails };

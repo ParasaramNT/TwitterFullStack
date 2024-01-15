@@ -11,7 +11,7 @@ const SideNavBar = () => {
     <div className="sidebar">
       <TwitterIcon className="sidebar--twitter--icon" />
       {SideBarOptions.map((item) => (
-        <NavLink to={item.route} key={item.text} activeClassName="active-link">
+        <NavLink to={item.route} key={item.text}>
           <SideNavbarItem text={item.text} Icon={item.Icon} />
         </NavLink>
       ))}

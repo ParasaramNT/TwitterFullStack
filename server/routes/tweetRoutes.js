@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.post("/posttweet", auth, postTweetController);
 router.post("/deletetweet:tweetid", auth, deleteTweetController);
-router.get("/getalltweets", auth, getAllTweetsByUser);
+router.get("/getalltweetsbyuser", auth, getAllTweetsByUser);
 
 module.exports = router;
