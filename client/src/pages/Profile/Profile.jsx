@@ -48,14 +48,31 @@ const Profile = () => {
   return (
     <div className="profileDiv">
       <h2>Profile</h2>
-      {userDetails ? (
-        <div>
-          <p>Username: {userDetails.username}</p>
-          <p>Email: {userDetails.email}</p>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      <div className="profile__post">
+        {userDetails ? (
+          <div>
+            <p>displayName: {userDetails.displayname}</p>
+            <p>Username: {userDetails.username}</p>
+            <p>Email: {userDetails.email}</p>
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+      <div>
+        {userPosts ? (
+          userPosts.map((item) => (
+            <Post
+              key={item._id}
+              displayName={item.user.displayname}
+              userName={item.user.username}
+              text={item.tweet}
+            />
+          ))
+        ) : (
+          <p>Loading</p>
+        )}
+      </div>
     </div>
   );
 };

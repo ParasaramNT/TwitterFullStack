@@ -8,6 +8,7 @@
   height: 50px;
   width: 200px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .button--large:hover {
@@ -26,6 +27,7 @@
   width: 100px;
   height: 50px;
   margin: auto;
+  cursor: pointer;
 }
 
 .button--tiny {
@@ -38,4 +40,5 @@
   width: 70px;
   height: 30px;
   margin: auto;
+  cursor: pointer;
 }

@@ -13,14 +13,14 @@ const postTweetController = async (req, res) => {
         message: "User not logged in",
       });
     }
-    if (!tweetContent || tweet.length == 0) {
+    if (!tweet || tweet.length == 0) {
       return res.status(400).json({
         success: false,
         message: "Cannot post empty tweet",
       });
     }
     try {
-      const newTweet = await Tweet.create({ tweet, _id: userId });
+      const newTweet = await Tweet.create({ tweet, user: userId });
       return res.status(200).json({
         success: true,
         message: "Tweet Posted Successfully",
@@ -77,7 +77,7 @@ const deleteTweetController = async (req, res) => {
 const getAllTweetsByUser = async (req, res) => {
   try {
     const userId = req.user.id;
-    const Tweets = await Tweet.find({ user: userId });
+    const Tweets = await Tweet.find({ user: userId }).populate("user");
     res.status(200).json({
       success: true,
       tweets: Tweets,

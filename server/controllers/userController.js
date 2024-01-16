@@ -6,7 +6,7 @@ dotenv.config();
 
 const signup = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, displayname, email, password } = req.body;
     const existingUser = await User.findOne({
       $or: [{ username: username }, { email: email }],
     });
@@ -31,6 +31,7 @@ const signup = async (req, res) => {
     const newUser = await User.create({
       username,
       email,
+      displayname,
       password: hashedPassword,
     });
 
@@ -76,6 +77,7 @@ const login = async (req, res) => {
     const options = {
       username: user.username,
       email: user.email,
+      displayname: user.displayname,
       id: user._id,
     };
     console.log("JWT in controller:", process.env.JWT_SECRET);

@@ -18,23 +18,23 @@ const Post = ({ displayName, userName, verified, text, image, avatar }) => {
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              Santosh Tentu{" "}
+              {displayName}{" "}
               <span className="post__headerSpecial">
-                <VerifiedIcon className="post__badge" /> <i> @santosh_tpn</i>
+                <VerifiedIcon className="post__badge" /> <i> @{userName}</i>
               </span>
             </h3>
           </div>
           <div className="post__headerDescription">
-            <p>
-              This is a full stack clone of the Twitter, Which is really really
-              hard
-            </p>
+            <p>{text}</p>
           </div>
         </div>
-        <img
-          src="https://media.giphy.com/media/ZqlvCTNHpqrio/giphy.gif"
-          alt="image"
-        ></img>
+        {image && (
+          <img
+            src="https://media.giphy.com/media/ZqlvCTNHpqrio/giphy.gif"
+            alt="image"
+          ></img>
+        )}
+
         <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" />
           <RepeatIcon fontSize="small" />
