@@ -10,7 +10,7 @@ const Profile = () => {
     try {
       const res = await axios.get(
         "http://localhost:8000/api/getalltweetsbyuser",
-        {
+         {
           "Content-Type": "application/json",
           withCredentials: true,
         }
@@ -67,6 +67,7 @@ const Profile = () => {
               displayName={item.user.displayname}
               userName={item.user.username}
               text={item.tweet}
+              id= {item._id}
             />
           ))
         ) : (

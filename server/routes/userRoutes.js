@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.post("/signup", signup);
 router.post("/login", login);
-router.get("/logoff", auth, logoff);
+router.post("/logoff", auth, logoff);
 router.get("/userdetails", auth, userDetails);
 router.post("/uppdateprofile:userId", updateProfile);
 

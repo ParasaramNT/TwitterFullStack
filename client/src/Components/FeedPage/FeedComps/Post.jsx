@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Post.css";
 import Avatar from "@mui/material/Avatar";
 import VerifiedIcon from "@mui/icons-material/Verified";
@@ -7,8 +7,50 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import axios from "axios"
 
-const Post = ({ displayName, userName, verified, text, image, avatar }) => {
+
+const Post = ({ displayName, userName, verified, text, image, avatar, id }) => {
+
+  const [like, setLike] = useState(false);
+
+  const fetchLikeStatus = async ()=>{
+    try{
+      console.log(id);
+      const response= await axios.get(`http://localhost:8000/api/getAllUsersWhoLiked/${id}`, {
+        headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+      });
+      console.log(response)
+      setLike(response.data.userLiked);
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
+  const handleClick = async ()=> {
+    try{
+      const response = await axios.post(`http://localhost:8000/api/liketweet/${id}`,{}, {
+        headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+      });  
+      setLike(response.data.newLikeState);
+    }
+    catch(err){
+      console.log(err)
+    }
+    
+  }
+
+  useEffect(() => {
+    fetchLikeStatus();
+  }, [id, like])
   return (
     <div className="post">
       <div className="post__avatar">
@@ -38,7 +80,18 @@ const Post = ({ displayName, userName, verified, text, image, avatar }) => {
         <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" />
           <RepeatIcon fontSize="small" />
-          <FavoriteBorderIcon fontSize="small" />
+          {like ? (
+          <FavoriteIcon
+            fontSize="small" 
+            style={{ color: 'red' }} 
+            onClick={handleClick} 
+          />
+        ) : (
+          <FavoriteBorderIcon
+            fontSize="small" 
+            onClick={handleClick} 
+          />
+        )}
           <BarChartIcon fontSize="small" />
           <BookmarkBorderIcon fontSize="small" />
         </div>

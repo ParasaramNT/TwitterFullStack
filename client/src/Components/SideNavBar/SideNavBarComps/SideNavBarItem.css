@@ -3,6 +3,7 @@
   align-items: center;
   cursor: pointer;
   text-decoration: none;
+  position: relative;
 }
 
 .sidebarOption:hover {
@@ -10,6 +11,7 @@
   border-radius: 30px;
   color: var(--twitter-color);
   transition: color 100ms ease-out;
+  
 }
 
 .sidebarOption > .MuiSvgIcon-root {
