@@ -3,7 +3,7 @@
   align-items: flex-start;
   border-bottom: 1px solid var(--twitter-background);
   padding-bottom: 10px;
-  width: 50rem;
+  max-width: 100%;
   border-top: 1px solid var(--twitter-background);
 }
 

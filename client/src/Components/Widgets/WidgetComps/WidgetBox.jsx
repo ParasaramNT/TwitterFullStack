@@ -5,7 +5,7 @@ import WidgetItemHappening from "./WidgetItemHappening";
 
 const WidgetBox = ({ box }) => {
   return (
-    <div>
+
       <div className="widgetsBox">
         <div>
           <h2>{box}</h2>
@@ -13,7 +13,7 @@ const WidgetBox = ({ box }) => {
           {box == "Who to Follow" && <WidgetItemWhoToFollow />}
         </div>
       </div>
-    </div>
+
   );
 };
 
