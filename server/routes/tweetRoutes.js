@@ -3,7 +3,8 @@ const {
   deleteTweetController,
   getAllTweetsByUser,
   likeTweetController,
-  getAllUsersWhoLiked
+  getAllUsersWhoLiked,
+  getAllTweetsForFeed
 } = require("../controllers/tweetController");
 const { auth } = require("../middlewares/authMiddleware");
 
@@ -14,6 +15,7 @@ router.post("/posttweet", auth, postTweetController);
 router.post("/deletetweet:tweetid", auth, deleteTweetController);
 router.get("/getalltweetsbyuser", auth, getAllTweetsByUser);
 router.post("/liketweet/:tweetId", auth, likeTweetController);
-router.get("/getAllUsersWhoLiked/:tweetId", auth, getAllUsersWhoLiked)
+router.get("/getAllUsersWhoLiked/:tweetId", auth, getAllUsersWhoLiked);
+router.get("/getAllTweetsForFeed", auth, getAllTweetsForFeed);
 
 module.exports = router;

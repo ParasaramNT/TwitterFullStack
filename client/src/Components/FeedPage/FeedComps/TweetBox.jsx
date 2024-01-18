@@ -4,6 +4,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "../../Common/Button";
 import { useState } from "react";
 import axios from "axios";
+import ImageIcon from '@mui/icons-material/Image';
 
 const TweetBox = () => {
   const [tweet, setTweet] = useState("");
@@ -32,14 +33,19 @@ const TweetBox = () => {
       <form onSubmit={handleSubmit}>
         <div className="tweetBox__input">
           <Avatar sx={{ width: 70, height: 70 }}>H</Avatar>
-          <input
+          <textarea
             placeholder="What's happening"
             type="text"
             value={tweet}
             onChange={(e) => setTweet(e.target.value)}
-          ></input>
-          <Button size="small">Tweet</Button>
+          ></textarea>
         </div>
+        <div className="tweetimage">
+          <div>
+            <ImageIcon color="primary" fontSize="large" className="imageicon"/>
+          </div>
+          <Button size="small">Tweet</Button>
+          </div>
       </form>
     </div>
   );

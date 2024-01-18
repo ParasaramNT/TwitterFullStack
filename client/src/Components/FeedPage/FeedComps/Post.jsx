@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Post.css";
 import Avatar from "@mui/material/Avatar";
-import VerifiedIcon from "@mui/icons-material/Verified";
+import VerifiedIcon from "@mui/icons-material/Verified"; 
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -11,7 +11,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import axios from "axios"
 
 
-const Post = ({ displayName, userName, verified, text, image, avatar, id }) => {
+const Post = ({ displayName, userName,  text, image, avatar, id }) => {
 
   const [like, setLike] = useState(false);
 
@@ -44,6 +44,7 @@ const Post = ({ displayName, userName, verified, text, image, avatar, id }) => {
     }
     catch(err){
       console.log(err)
+      setLike(!like);
     }
     
   }

@@ -157,11 +157,43 @@ const getAllUsersWhoLiked = async (req, res)=>{
     }
 }
 
+const getAllTweetsForFeed = async (req, res) => {
+  try{
+    const tweets = await Tweet.aggregate([
+      { $sample: { size: await Tweet.countDocuments() } },
+      {
+        $lookup: {
+          from: "users", 
+          localField: "user", 
+          foreignField: "_id", 
+          as: "userDetails" 
+        }
+      },
+      {
+        $unwind: "$userDetails" 
+      }
+    ]).exec();
+
+    res.status(200.0).json({
+      success: true,
+      tweets: tweets,
+    })
+  }
+  catch(err){
+    res.status(500).json({
+      success: false,
+      message: "Error retrieving tweets",
+      error: err.message,
+    });
+  }
+}
+
 
 module.exports = {
   postTweetController,
   deleteTweetController,
   getAllTweetsByUser,
   likeTweetController,
-  getAllUsersWhoLiked
+  getAllUsersWhoLiked,
+  getAllTweetsForFeed
 };
