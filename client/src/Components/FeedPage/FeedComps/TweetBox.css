@@ -7,8 +7,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  border-left: solid 2px;
-  border-right: solid 2px;
+
   border-color: gray;
   margin-left: 10px;
 }
@@ -24,7 +23,7 @@
   resize: none;
   border: none; 
   font-size: 24px; 
-
+  border-bottom: 1px solid;
 }
 
 .tweetBox__input > textarea:focus{
@@ -32,6 +31,7 @@
 }
 
 .tweetimage {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -39,6 +39,7 @@
 
 .tweetimage > button {
   margin: 5px;
+  margin-top: 10px;
 }
 
 .imageicon{

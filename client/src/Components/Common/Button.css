@@ -42,3 +42,15 @@
   margin: auto;
   cursor: pointer;
 }
+
+.button--small:hover{
+  cursor: pointer;
+  background-color: #174c8d;
+  transition: background-color 200ms ease-out;
+}
+
+.button--tiny:hover{
+  cursor: pointer;
+  background-color: #174c8d;
+  transition: background-color 200ms ease-out;
+}

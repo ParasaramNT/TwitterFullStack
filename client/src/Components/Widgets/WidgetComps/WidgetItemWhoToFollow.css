@@ -1,5 +1,27 @@
 .widgetItemWhoToFollow {
+  display: flex;
+  align-items:flex-start; /* Aligns items vertically in the center */
+  padding: 10px;
+  margin-bottom: 10px; /* Adds space between each item */
+  border-top: 1px solid #dce2e2;
+}
+
+.widgetItemWhoToFollow > div {
+  flex-grow: 1; /* Allows the div containing the text to take up available space */
+  margin-left: 10px; /* Adds some space between the avatar and the text */
+}
+
+.whoavatar{
+  padding-left: 0px;
+}
+.avatar-and-details{
+  display: flex;
+}
+
+.avatar-and-details>div{
   padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+}
+
+.widgetItemWhoToFollow:hover{
+  border-top: 1px solid #c1c5c5;
 }

@@ -168,9 +168,35 @@ const userDetails = async (req, res) => {
   }
 };
 
+const getAllUsers = async (req, res)=> {
+  try{
+    const numberOfUsers = parseInt(req.query.n, 10);
+    let users;
+    if (isNaN(numberOfUsers) || numberOfUsers <= 0) {
+      users = await User.find({});
+    } else {
+      users = await User.aggregate([
+        { $sample: { size: numberOfUsers } }
+      ]);
+    }
+    return res.status(200).json({
+      success: true,
+      message: 'Users retrieved successfully',
+      users,
+    });
+  }
+  catch(err){
+    return res.status(500).json({
+      success: false,
+      message: 'Error retrieving users',
+      error: err.message,
+    });
+  }
+}
+
 const updateProfile = async (req, res) => {
   try {
   } catch (err) {}
 };
 
-module.exports = { signup, login, logoff, updateProfile, userDetails };
+module.exports = { signup, login, logoff, updateProfile, userDetails, getAllUsers };
