@@ -48,7 +48,6 @@ const Post = ({ displayName, userName,  text, image, avatar, id }) => {
     }
     
   }
-
   useEffect(() => {
     fetchLikeStatus();
   }, [id, like])

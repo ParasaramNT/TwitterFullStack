@@ -2,53 +2,34 @@ import React from "react";
 import "./TweetBox.css";
 import Avatar from "@mui/material/Avatar";
 import Button from "../../Common/Button";
-import { useState } from "react";
-import axios from "axios";
 import ImageIcon from '@mui/icons-material/Image';
 
-const TweetBox = () => {
-  const [tweet, setTweet] = useState("");
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      axios.post(
-        "http://localhost:8000/api/posttweet",
-        {
-          tweet,
-        },
-        {
-          "Content-Type": "application/json",
-          withCredentials: true,
-        }
-      );
-    } catch (err) {
-      console.log(err);
-    }
-    setTweet("");
-  };
-
+const TweetBox = ({handleSubmit, tweet, setTweet}) => {
   return (
     <div className="tweetBox">
       <form onSubmit={handleSubmit}>
         <div className="tweetBox__input">
           <Avatar sx={{ width: 70, height: 70 }}>H</Avatar>
-          <textarea
-            placeholder="What's happening"
-            type="text"
-            value={tweet}
-            onChange={(e) => setTweet(e.target.value)}
-          ></textarea>
+          <div className="tweetBox__container">
+            <textarea
+              placeholder="What's happening"
+              type="text"
+              value={tweet}
+              onChange={(e) => setTweet(e.target.value)}
+              autoFocus={true}
+            ></textarea>
+            <div className="tweetimage">
+              <ImageIcon style={{ fontSize: '48px', color: '#50b7f5' }} className="imageicon"/>
+              <Button size="small">Tweet</Button>
+            </div>
+          </div>
         </div>
-        <div className="tweetimage">
-          <div>
-            <ImageIcon color="primary" fontSize="large" className="imageicon"/>
-          </div>
-          <Button size="small">Tweet</Button>
-          </div>
       </form>
     </div>
   );
 };
 
 export default TweetBox;
+
+
+

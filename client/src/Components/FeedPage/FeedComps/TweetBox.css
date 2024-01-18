@@ -1,41 +1,47 @@
-.tweetBox {
-  padding-bottom: 10px;
-  border-bottom: 8px solid var(--twitter-background);
-  padding-right: 10px;
-}
-
-.tweetBox > form {
-  display: flex;
-  flex-direction: column;
-}
-
 .tweetBox__input {
   padding: 20px;
   display: flex;
 }
 
-.tweetBox__input > textarea {
+.tweetBox__container {
   flex: 1;
-  margin-left: 20px;
-  font-size: 20px;
-  border: solid 2px;
+  display: flex;
+  flex-direction: column;
+  border-left: solid 2px;
+  border-right: solid 2px;
   border-color: gray;
-  margin-right: 20px;
+  margin-left: 10px;
 }
 
-.tweetBox__imageInput {
-  border: none;
-  padding: 10px;
+
+.tweetBox__container > textarea {
+  font-size: 20px;
+  margin-left: 20px;
+  height: 60px;
+  padding-top: 20px;
+  padding-left: 10px;
+  outline: none;
+  resize: none;
+  border: none; 
+  font-size: 24px; 
+
 }
 
-.tweetimage{
+.tweetBox__input > textarea:focus{
+  outline: none;
+}
+
+.tweetimage {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.tweetimage>button{
- margin: 5px;
+
+.tweetimage > button {
+  margin: 5px;
 }
-.imageicon:hover{
+
+.imageicon{
+  size: 120px;
   cursor: pointer;
 }
