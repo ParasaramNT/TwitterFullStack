@@ -78,22 +78,26 @@ const Post = ({ displayName, userName,  text, image, avatar, id }) => {
         )}
 
         <div className="post__footer">
-          <ChatBubbleOutlineIcon fontSize="small" />
-          <RepeatIcon fontSize="small" />
+        <div className="inner__footer">
+          <ChatBubbleOutlineIcon fontSize="small" className="inner__footer__item"/>
+          <RepeatIcon fontSize="small" className="inner__footer__item"/>
           {like ? (
           <FavoriteIcon
             fontSize="small" 
+            className="inner__footer__item"
             style={{ color: 'red' }} 
             onClick={handleClick} 
           />
         ) : (
           <FavoriteBorderIcon
             fontSize="small" 
+            className="inner__footer__item"
             onClick={handleClick} 
           />
         )}
-          <BarChartIcon fontSize="small" />
-          <BookmarkBorderIcon fontSize="small" />
+          <BarChartIcon fontSize="small" className="inner__footer__item"/>
+          <BookmarkBorderIcon fontSize="small" className="inner__footer__item"/>
+          </div>
         </div>
       </div>
     </div>

@@ -25,6 +25,7 @@
 .post__headerDescription {
   margin-bottom: 10px;
   font-size: 15px;
+  padding-right: 50px;
 }
 
 .post__headerText > h3 {
@@ -50,4 +51,14 @@
 
 .post__footer:hover{
   cursor: pointer;
+}
+
+
+.inner__footer{
+  display: flex;
+  justify-content: space-around;
+}
+
+.inner__footer__item{
+  padding-right: 70px;
 }
