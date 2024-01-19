@@ -8,7 +8,7 @@ const WidgetBox = ({ box }) => {
 
       <div className="widgetsBox">
         <div>
-          <h2>{box}</h2>
+          <h4>{box}</h4>
           {box == "What's Happening" && <WidgetItemHappening />}
           {box == "Who to Follow" && <WidgetItemWhoToFollow />}
         </div>

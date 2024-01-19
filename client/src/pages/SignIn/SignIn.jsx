@@ -32,23 +32,31 @@ const SignIn = () => {
   };
 
   return (
-    <div>
-      <div></div>
-      <div>
-        <h1>Login</h1>
+    <div className="login__main">
+      <div className="login__side__img">
+        <img src="https://freelogopng.com/images/all_img/1657043345twitter-logo-png.png" alt="Twitter logo"></img>
+      </div>
+      <div className="login__form">
+        <p><strong>Happening Now</strong></p>
+        <h1>Login Now.</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          ></input>
+            placeholder="Email"
+          />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          ></input>
+            placeholder="Password"
+          />
           <Button size="large" type="submit">
             Log In
+          </Button>
+          <Button size="large" onClick={()=>navigate("/signup")}>
+            Sign Up
           </Button>
         </form>
       </div>

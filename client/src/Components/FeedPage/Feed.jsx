@@ -3,12 +3,16 @@ import "./Feed.css";
 import TweetBox from "./FeedComps/TweetBox";
 import Post from "./FeedComps/Post";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"
 
 const Feed = () => {
   const [tweet, setTweet] = useState("");
   const [allTweets, setAllTweets] = useState([]);
   const [error, setError] = useState(null);
   const [userDetails, setUserDetails] = useState([]);
+
+  const navigate = useNavigate();
+
 
   const handleSelectImage = useCallback(()=>{
     const input = document.createElement('input');
@@ -28,6 +32,7 @@ const Feed = () => {
       setAllTweets(response.data.tweets);
     } catch (err) {
       console.error(err);
+      navigate("/signin");
       setError("Failed to load tweets. Please try again later.");
     }
   };
@@ -83,7 +88,7 @@ const Feed = () => {
 
   return (
     <div className="feed">
-    <TweetBox handleSubmit={handleSubmit} handleSelectImage={handleSelectImage} tweet={tweet} setTweet={setTweet}/>
+    <TweetBox handleSubmit={handleSubmit} handleSelectImage={handleSelectImage} tweet={tweet} setTweet={setTweet} className="tweetbox"/>
     <div>
       {allTweets.map((item) => (
         <Post

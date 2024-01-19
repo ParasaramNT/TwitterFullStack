@@ -230,6 +230,7 @@ const followUnfollowUser = async (req, res) => {
 
     res.status(200).json({
       success: true,
+      isFollowing,
       message: isFollowing ? "User unfollowed successfully" : "User followed successfully",
     });
   }
@@ -242,9 +243,43 @@ const followUnfollowUser = async (req, res) => {
   }
 }
 
+const checkIfUserIsFollowing = async (req, res) => {
+  try {
+    console.log("In check:", req.user.id);
+    console.log("In check param:", req.params.userid);
+
+    // Retrieve the logged-in user's data from the database
+    const loggedUser = await User.findById(req.user.id).exec();
+    const userIdToCheck = req.params.userid;  // Already a string
+
+    if (!loggedUser) {
+      return res.status(401).json({
+        success: false,
+        message: "User not logged in",
+      });
+    }
+
+    // Convert ObjectId to string for comparison
+    const isFollowing = loggedUser.following.map(id => id.toString()).includes(userIdToCheck);
+
+    res.status(200).json({
+      success: true,
+      isFollowing,
+    });
+  } catch (err) {
+    console.error("Server error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+      error: err.message,
+    });
+  }
+};
+
+
 const updateProfile = async (req, res) => {
   try {
   } catch (err) {}
 };
 
-module.exports = { signup, login, logoff, updateProfile, userDetails, getAllUsers, followUnfollowUser };
+module.exports = { signup, login, logoff, updateProfile, userDetails, getAllUsers, followUnfollowUser, checkIfUserIsFollowing };

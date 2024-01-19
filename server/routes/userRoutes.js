@@ -5,7 +5,8 @@ const {
   userDetails,
   updateProfile,
   getAllUsers,
-  followUnfollowUser
+  followUnfollowUser,
+  checkIfUserIsFollowing
 } = require("../controllers/userController");
 
 const { auth } = require("../middlewares/authMiddleware");
@@ -20,5 +21,6 @@ router.get("/userdetails", auth, userDetails);
 router.post("/uppdateprofile/:userid", updateProfile);
 router.get("/getallusers",auth, getAllUsers);
 router.post('/followunfollowuser/:userid', auth, followUnfollowUser)
+router.get('/getifuserisfollowing/:userid', auth, checkIfUserIsFollowing);
 
 module.exports = router;
