@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import axios from "axios";
 import Post from "../../Components/FeedPage/FeedComps/Post";
+import ProfImage from "./ProfileComp/ProfImage";
 
 const Profile = () => {
   const [userDetails, setUserDetails] = useState([]);
@@ -47,18 +48,7 @@ const Profile = () => {
 
   return (
     <div className="profileDiv">
-      <h2>Profile</h2>
-      <div className="profile__post">
-        {userDetails ? (
-          <div>
-            <p>displayName: {userDetails.displayname}</p>
-            <p>Username: {userDetails.username}</p>
-            <p>Email: {userDetails.email}</p>
-          </div>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
+      <ProfImage userDetails={userDetails} userPosts={userPosts} />
       <div>
         {userPosts ? (
           userPosts.map((item) => (

@@ -4,7 +4,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "../../Common/Button";
 import ImageIcon from '@mui/icons-material/Image';
 
-const TweetBox = ({handleSubmit, tweet, setTweet}) => {
+const TweetBox = ({handleSubmit, tweet, handleSelectImage, setTweet}) => {
   return (
     <div className="tweetBox">
       <form onSubmit={handleSubmit}>
@@ -19,8 +19,8 @@ const TweetBox = ({handleSubmit, tweet, setTweet}) => {
               autoFocus={true}
             ></textarea>
             <div className="tweetimage">
-              <ImageIcon style={{ fontSize: '48px', color: '#50b7f5' }} className="imageicon"/>
-              <Button size="small">Tweet</Button>
+              <ImageIcon style={{ fontSize: '24px', color: '#50b7f5' }} className="imageicon" onClick={handleSelectImage}/>
+              <Button size="tiny">Tweet</Button>
             </div>
           </div>
         </div>

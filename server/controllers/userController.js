@@ -194,9 +194,57 @@ const getAllUsers = async (req, res)=> {
   }
 }
 
+const followUnfollowUser = async (req, res) => {
+  try{
+    const userIdToFollowUnFollow = req.params.userid;
+    const loggedUser = req.user.id;
+
+    if(!loggedUser){
+      return res.status(400).json({
+        success: false,
+        message: "user already logout out",
+      });
+    }
+    const userToFollowUnFollow = await User.findById(userIdToFollowUnFollow);
+    const currentUser = await User.findById(loggedUser);
+
+    if (!userToFollowUnFollow || !currentUser) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    const isFollowing = currentUser.following.includes(userIdToFollowUnFollow);
+
+    if (isFollowing) {
+      currentUser.following.pull(userIdToFollowUnFollow);
+      userToFollowUnFollow.followers.pull(loggedUser);
+    } else {
+      currentUser.following.push(userIdToFollowUnFollow);
+      userToFollowUnFollow.followers.push(loggedUser);
+    }
+
+    await currentUser.save();
+    await userToFollowUnFollow.save();
+
+    res.status(200).json({
+      success: true,
+      message: isFollowing ? "User unfollowed successfully" : "User followed successfully",
+    });
+  }
+  catch(err){
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+      error: err.message,
+    });
+  }
+}
+
 const updateProfile = async (req, res) => {
   try {
   } catch (err) {}
 };
 
-module.exports = { signup, login, logoff, updateProfile, userDetails, getAllUsers };
+module.exports = { signup, login, logoff, updateProfile, userDetails, getAllUsers, followUnfollowUser };

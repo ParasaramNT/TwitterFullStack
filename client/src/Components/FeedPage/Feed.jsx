@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./Feed.css";
 import TweetBox from "./FeedComps/TweetBox";
 import Post from "./FeedComps/Post";
@@ -9,6 +9,13 @@ const Feed = () => {
   const [allTweets, setAllTweets] = useState([]);
   const [error, setError] = useState(null);
   const [userDetails, setUserDetails] = useState([]);
+
+  const handleSelectImage = useCallback(()=>{
+    const input = document.createElement('input');
+    input.setAttribute('type', 'file')
+    input.setAttribute('accept', "image/*")
+    input.click();
+  }, [])
 
   const fetchTweets = async () => {
     try {
@@ -76,7 +83,7 @@ const Feed = () => {
 
   return (
     <div className="feed">
-    <TweetBox handleSubmit={handleSubmit} tweet={tweet} setTweet={setTweet}/>
+    <TweetBox handleSubmit={handleSubmit} handleSelectImage={handleSelectImage} tweet={tweet} setTweet={setTweet}/>
     <div>
       {allTweets.map((item) => (
         <Post
