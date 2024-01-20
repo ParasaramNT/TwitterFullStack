@@ -106,20 +106,70 @@ index.js
 
 User
 ```
+Signup: POST /signup
 
-/api/signup
-/api/signin
+Endpoint to register a new user.
+Login: POST /login
+
+Endpoint for user login.
+Logoff: POST /logoff
+
+Authenticated endpoint for logging off a user.
+User Details: GET /userdetails
+
+Authenticated endpoint to retrieve the details of the logged-in user.
+Update Profile: POST /uppdateprofile/:userid
+
+Endpoint to update the profile of a user. The URL seems to have a typo (uppdateprofile should be updateprofile).
+Get All Users: GET /getallusers
+
+Authenticated endpoint to retrieve all users.
+Follow/Unfollow User: POST /followunfollowuser/:userid
+
+Authenticated endpoint to follow or unfollow another user.
+Check If User Is Following: GET /getifuserisfollowing/:userid
+
+Authenticated endpoint to check if the logged-in user is following another user.
+
 ```
 Tweet
 ```
-/api/posttweet
-/api/deletetweet/:tweetId
-/api/liketweet/:tweetId
+Post Tweet: POST /posttweet
+
+Authenticated endpoint to create a new tweet.
+Delete Tweet: POST /deletetweet:tweetid
+
+Authenticated endpoint to delete a tweet. The URL should ideally have a slash before the parameter (:tweetid), like /deletetweet/:tweetid.
+Get All Tweets by User: GET /getalltweetsbyuser
+
+Authenticated endpoint to retrieve all tweets posted by a specific user.
+Like Tweet: POST /liketweet/:tweetId
+
+Authenticated endpoint to like a tweet.
+Get All Users Who Liked a Tweet: GET /getAllUsersWhoLiked/:tweetId
+
+Authenticated endpoint to get a list of all users who liked a specific tweet.
+Get All Tweets for Feed: GET /getAllTweetsForFeed
+
+Authenticated endpoint to get all tweets for a user's feed, typically including tweets from followed users and the user's own tweets.
+
 ```
-Reply
+
+
+
+
+Reply (Yet To Do)
 ```
-/api/postreply
-/api/deletereply/:replyId (Tobe Done)
+Post Reply: POST /postreply
+
+Authenticated endpoint to post a reply to a tweet.
+Delete Reply: POST /deletereply:replyid
+
+Authenticated endpoint to delete a reply. The URL should have a slash before the parameter (:replyid), like /deletereply/:replyid.
+Get All Replies of a Tweet: GET /getReplys:tweetId
+
+Authenticated endpoint to get all replies for a specific tweet. The URL should have a slash before the parameter (:tweetId), like /getReplys/:tweetId.
+
 ```
 ## Development Notes
 
