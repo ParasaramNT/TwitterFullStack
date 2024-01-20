@@ -105,18 +105,22 @@ index.js
 ## API Endpoints
 
 User
+```
 
 /api/signup
 /api/signin
+```
 Tweet
-
+```
 /api/posttweet
 /api/deletetweet/:tweetId
 /api/liketweet/:tweetId
+```
 Reply
-
+```
 /api/postreply
-/api/deletereply/:replyId
+/api/deletereply/:replyId (Tobe Done)
+```
 ## Development Notes
 
 Ensure MongoDB is running for the backend.
