@@ -12,6 +12,10 @@
   margin-left: 10px;
 }
 
+.tweetbox__avatar{
+  height: 70px !important;
+  width: 70px !important;
+}
 
 .tweetBox__container > textarea {
   width: 90%;
@@ -53,4 +57,23 @@
 .tweetBox>form {
   border-top: 1px solid;
   border-color: rgb(219, 212, 212);
+}
+
+@media screen and (max-width: 768px) {
+  .tweetBox__container > textarea{
+    padding: 5px;
+    font-size: 10px;
+    height: 20px;
+  }
+  .tweetimage > button {
+    margin: 5px;
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 50px;
+    height: 20px;
+  }
+  .tweetbox__avatar{
+    height: 40px !important;
+    width: 40px !important;
+  }
 }

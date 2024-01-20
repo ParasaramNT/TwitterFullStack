@@ -9,7 +9,7 @@ const TweetBox = ({handleSubmit, tweet, handleSelectImage, setTweet}) => {
     <div className="tweetBox">
       <form onSubmit={handleSubmit}>
         <div className="tweetBox__input">
-          <Avatar sx={{ width: 70, height: 70 }}>H</Avatar>
+          <Avatar className="tweetbox__avatar">H</Avatar>
           <div className="tweetBox__container">
             <textarea
               placeholder="What's happening"

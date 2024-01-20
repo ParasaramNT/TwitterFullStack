@@ -3,6 +3,8 @@
   flex: 0.5;
   border-right: 1px solid var(--twitter-background);
   overflow-y: scroll;
+  z-index: 200;
+  min-height: 100%;
 }
 
 
@@ -26,3 +28,9 @@
   font-weight: 800;
 }
 
+@media screen and (max-width: 768px){
+  .feed{
+    z-index: 200;
+
+  }
+}

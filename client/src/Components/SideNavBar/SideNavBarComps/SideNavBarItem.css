@@ -42,3 +42,9 @@
 .sidebarOption > h2 {
   padding-top: 10px;
 }
+
+@media screen and (max-width: 768px){
+  h2{
+    display: none;
+  }
+}

@@ -54,3 +54,19 @@
   background-color: #174c8d;
   transition: background-color 200ms ease-out;
 }
+
+@media screen and (max-width: 768px){
+  .button--large, .button--tiny, .button--small{
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  text-transform: inherit;
+  border-radius: 30px;
+  width: 70px;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+  }
+
+}
