@@ -2,24 +2,10 @@ const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const getToken = (req) => {
-  // Check Authorization header
-  const authHeader = req.header("Authorization");
-  if (authHeader && authHeader.startsWith("Bearer ")) {
-    console.log("Return from AutheHeader");
-    return authHeader.split(" ")[1];
-  }
-  // Check cookie
-  if (req.cookies.tokencookie) {
-    console.log("Return from cookie");
-    return req.cookies.tokencookie;
-  }
-  // Check request body
-};
 
 const auth = async (req, res, next) => {
   try {
-    const token = getToken(req);
+    const token = req.cookies.tokencookie;
     console.log(token);
 
     if (!token) {
