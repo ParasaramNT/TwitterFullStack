@@ -5,11 +5,15 @@ dotenv.config();
 
 const auth = async (req, res, next) => {
   try {
-    console.log("req.body.token");
-    console.log("req.body.token", req.body.token);
-    console.log("req.body.tokencookie", req.body.tokencookie);
-    const token = req.body.token || req.cookies.tokencookie;
-    console.log(token);
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      return res.status(401).json({
+        success: false,
+        message: "No token provided",
+      });
+    }
+
+    const token = authHeader.split(' ')[1];
 
     if (!token) {
       return res.status(400).json({
