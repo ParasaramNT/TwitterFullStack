@@ -5,6 +5,7 @@ dotenv.config();
 
 const auth = async (req, res, next) => {
   try {
+    console.log("req.body.token");
     console.log("req.body.token", req.body.token);
     console.log("req.body.tokencookie", req.body.tokencookie);
     const token = req.body.token || req.cookies.tokencookie;
