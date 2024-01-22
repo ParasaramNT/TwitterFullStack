@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "../../Components/Common/Button";
-import "./Signin.css";
+import "./SignIn.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
