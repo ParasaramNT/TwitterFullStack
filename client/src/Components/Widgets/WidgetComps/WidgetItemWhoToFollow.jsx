@@ -9,7 +9,7 @@ const WidgetItemWhoToFollow = () => {
   const [loggedInUserId, setLoggedInUserId] = useState();
   const fetchUser = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/userdetails", {
+      const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/userdetails", {
         "Content-Type": "application/json",
         withCredentials: true,
       });
@@ -25,7 +25,7 @@ const WidgetItemWhoToFollow = () => {
 
   const fetchWhoToFollow = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/getallusers?n=3", {
+      const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/getallusers?n=3", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -35,7 +35,7 @@ const WidgetItemWhoToFollow = () => {
 
       // Ideally, modify your backend to include follow status in this API response
       for (const user of users) {
-        const followRes = await axios.get(`http://localhost:8000/api/getifuserisfollowing/${user._id}`, {
+        const followRes = await axios.get(`https://twitter-backend-gbfe.onrender.com/api/getifuserisfollowing/${user._id}`, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -53,7 +53,7 @@ const WidgetItemWhoToFollow = () => {
 
   const handleFollow = async (userId) => {
     try {
-      const res = await axios.post(`http://localhost:8000/api/followunfollowuser/${userId}`, {}, {
+      const res = await axios.post(`https://twitter-backend-gbfe.onrender.com/api/followunfollowuser/${userId}`, {}, {
         headers: {
           "Content-Type": "application/json"
         },

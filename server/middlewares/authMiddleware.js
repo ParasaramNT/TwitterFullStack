@@ -15,8 +15,6 @@ const getToken = (req) => {
     return req.cookies.tokencookie;
   }
   // Check request body
-  console.log("Return from body");
-  return req.body.token;
 };
 
 const auth = async (req, res, next) => {

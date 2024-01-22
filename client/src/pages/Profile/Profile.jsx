@@ -10,7 +10,7 @@ const Profile = () => {
   const fetchPosts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/getalltweetsbyuser",
+        "http://https://twitter-backend-gbfe.onrender.com/api/getalltweetsbyuser",
          {
           "Content-Type": "application/json",
           withCredentials: true,
@@ -27,7 +27,7 @@ const Profile = () => {
   };
   const fetchUser = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/userdetails", {
+      const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/userdetails", {
         "Content-Type": "application/json",
         withCredentials: true,
       });

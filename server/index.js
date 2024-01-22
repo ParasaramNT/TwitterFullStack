@@ -31,13 +31,13 @@ app.use("/api", replyRoutes);
 connectDB();
 
 /*
-localhost:8000/api/posttweet
-localhost:8000/api/deletetweet:tweetid
-localhost:8000/api/getalltweets
-localhost:8000/api/postreply
-localhost:8000/api/deletereply:replyid
-localhost:8000/api/getReplys:tweetId
-localhost:8000/signup
-localhost:8000/login
-localhost:8000/logoff
+https://twitter-backend-gbfe.onrender.com/api/posttweet
+https://twitter-backend-gbfe.onrender.com/api/deletetweet:tweetid
+https://twitter-backend-gbfe.onrender.com/api/getalltweets
+https://twitter-backend-gbfe.onrender.com/api/postreply
+https://twitter-backend-gbfe.onrender.com/api/deletereply:replyid
+https://twitter-backend-gbfe.onrender.com/api/getReplys:tweetId
+https://twitter-backend-gbfe.onrender.com/signup
+https://twitter-backend-gbfe.onrender.com/login
+https://twitter-backend-gbfe.onrender.com/logoff
 */

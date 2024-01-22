@@ -18,7 +18,7 @@ const Post = ({ displayName, userName,  text, image, avatar, id }) => {
   const fetchLikeStatus = async ()=>{
     try{
       console.log(id);
-      const response= await axios.get(`http://localhost:8000/api/getAllUsersWhoLiked/${id}`, {
+      const response= await axios.get(`https://twitter-backend-gbfe.onrender.com/api/getAllUsersWhoLiked/${id}`, {
         headers: {
         "Content-Type": "application/json",
       },
@@ -34,7 +34,7 @@ const Post = ({ displayName, userName,  text, image, avatar, id }) => {
 
   const handleClick = async ()=> {
     try{
-      const response = await axios.post(`http://localhost:8000/api/liketweet/${id}`,{}, {
+      const response = await axios.post(`https://twitter-backend-gbfe.onrender.com/api/liketweet/${id}`,{}, {
         headers: {
         "Content-Type": "application/json",
       },

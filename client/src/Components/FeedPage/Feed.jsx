@@ -23,7 +23,7 @@ const Feed = () => {
 
   const fetchTweets = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/getAllTweetsForFeed', {
+      const response = await axios.get('https://twitter-backend-gbfe.onrender.com/api/getAllTweetsForFeed', {
         headers: {
           "Content-Type": "application/json"
         },
@@ -41,7 +41,7 @@ const Feed = () => {
     event.preventDefault();
     try {
       axios.post(
-        "http://localhost:8000/api/posttweet",
+        "https://twitter-backend-gbfe.onrender.com/api/posttweet",
         {
           tweet,
         },
@@ -59,7 +59,7 @@ const Feed = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/userdetails", {
+      const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/userdetails", {
         "Content-Type": "application/json",
         withCredentials: true,
       });

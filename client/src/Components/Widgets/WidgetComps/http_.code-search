@@ -1,0 +1,25 @@
+# Query: http://
+
+10 results - 6 files
+
+client/src/Components/FeedPage/FeedComps/Post.jsx:
+  21:       const response= await axios.get(`https://twitter-backend-gbfe.onrender.com/api/getAllUsersWhoLiked/${id}`, {
+
+client/src/Components/Widgets/WidgetComps/WidgetItemWhoToFollow.jsx:
+  12:       const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/userdetails", {
+  28:       const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/getallusers?n=3", {
+  38:         const followRes = await axios.get(`https://twitter-backend-gbfe.onrender.com/api/getifuserisfollowing/${user._id}`, {
+  56:       const res = await axios.post(`https://twitter-backend-gbfe.onrender.com/api/followunfollowuser/${userId}`, {}, {
+
+client/src/pages/Profile/Profile.jsx:
+  13:         "https://twitter-backend-gbfe.onrender.com/api/getalltweetsbyuser",
+  30:       const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/userdetails", {
+
+client/src/pages/SignIn/SignIn.jsx:
+  15:       const res = await axios.post("https://twitter-backend-gbfe.onrender.com/api/login", {
+
+client/src/pages/SignUp/Signup.jsx:
+  16:       const res = await axios.post("https://twitter-backend-gbfe.onrender.com/api/signup", {
+
+server/index.js:
+  18:     origin: "localhost:5173",
