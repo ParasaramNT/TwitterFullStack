@@ -5,7 +5,7 @@ dotenv.config();
 
 const auth = async (req, res, next) => {
   try {
-    const token = req.cookies.tokencookie;
+    const token = req.body.token || req.cookies.tokencookie;
     console.log(token);
 
     if (!token) {
