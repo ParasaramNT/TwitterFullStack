@@ -1,5 +1,5 @@
 import React from "react";
-import "./WidgetItemHappening.css";
+import "./widgetItemHappening.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
