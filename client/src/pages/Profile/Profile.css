@@ -1,8 +1,0 @@
-.profileDiv {
-  flex: 0.5;
-  border-right: 1px solid var(--twitter-background);
-  overflow-y: scroll;
-}
-.profileDiv::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
-}

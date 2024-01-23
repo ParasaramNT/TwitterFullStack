@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://twitter-backend-gbfe.onrender.com",  "https://twitter-backend-gbfe.onrender.com/api/login"],
+    origin: ["http://localhost:5173", "https://twitter-backend-gbfe.onrender.com" ,"https://twitter-backend-gbfe.onrender.com/api/login"],
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
