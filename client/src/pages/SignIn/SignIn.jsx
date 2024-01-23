@@ -12,7 +12,7 @@ const SignIn = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const res = await axios.post("https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/login", {
+      const res = await axios.post("https://twitter-backend-gbfe.onrender.com/api/login", {
         email,
         password,
       });

@@ -53,7 +53,7 @@ const WidgetItemWhoToFollow = () => {
 
   const handleFollow = async (userId) => {
     try {
-      const res = await axios.post(`https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/followunfollowuser/${userId}`, {}, {
+      const res = await axios.post(`https://twitter-backend-gbfe.onrender.com/api/followunfollowuser/${userId}`, {}, {
         headers: {
           "Content-Type": "application/json"
         },
