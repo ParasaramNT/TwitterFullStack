@@ -25,7 +25,7 @@ const WidgetItemWhoToFollow = () => {
 
   const fetchWhoToFollow = async () => {
     try {
-      const res = await axios.get("https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/getallusers?n=3", {
+      const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/getallusers?n=3", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -35,7 +35,7 @@ const WidgetItemWhoToFollow = () => {
 
       // Ideally, modify your backend to include follow status in this API response
       for (const user of users) {
-        const followRes = await axios.get(`https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/getifuserisfollowing/${user._id}`, {
+        const followRes = await axios.get(`https://twitter-backend-gbfe.onrender.com/api/getifuserisfollowing/${user._id}`, {
           headers: {
             "Content-Type": "application/json",
           },
