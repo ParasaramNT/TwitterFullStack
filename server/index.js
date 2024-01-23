@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://twitter-backend-gbfe.onrender.com"],
+    origin: ["http://localhost:5173", "https://twitter-backend-gbfe.onrender.com", "https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app"],
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
