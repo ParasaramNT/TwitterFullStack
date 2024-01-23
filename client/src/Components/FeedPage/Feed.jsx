@@ -23,7 +23,7 @@ const Feed = () => {
 
   const fetchTweets = async () => {
     try {
-      const response = await axios.get('https://twitter-backend-gbfe.onrender.com/api/getAllTweetsForFeed', {
+      const response = await axios.get('https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/getAllTweetsForFeed', {
         headers: {
           "Content-Type": "application/json"
         },
@@ -59,7 +59,7 @@ const Feed = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/userdetails", {
+      const res = await axios.get("https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/userdetails", {
         "Content-Type": "application/json",
         withCredentials: true,
       });

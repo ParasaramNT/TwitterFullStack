@@ -13,7 +13,7 @@ const Signup = () => {
 
   const postDetails = async () => {
     try {
-      const res = await axios.post("https://twitter-backend-gbfe.onrender.com/api/signup", {
+      const res = await axios.post("https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/signup", {
         email,
         password,
         username,

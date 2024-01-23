@@ -8,7 +8,7 @@ const MoreOverlay = () => {
     const navigate = useNavigate();
     const handleClick = async () => {
         try {
-            const response = await axios.post("https://twitter-backend-gbfe.onrender.com/api/logoff", {}, {
+            const response = await axios.post("https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/logoff", {}, {
                 withCredentials: true,
                 headers: {
                     "Content-Type": "application/json"
