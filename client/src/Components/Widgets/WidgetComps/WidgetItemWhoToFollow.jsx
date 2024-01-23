@@ -9,7 +9,7 @@ const WidgetItemWhoToFollow = () => {
   const [loggedInUserId, setLoggedInUserId] = useState();
   const fetchUser = async () => {
     try {
-      const res = await axios.get("https://twitter-full-stack-exwv62if8-parasarams-projects.vercel.app/api/userdetails", {
+      const res = await axios.get("https://twitter-backend-gbfe.onrender.com/api/userdetails", {
         "Content-Type": "application/json",
         withCredentials: true,
       });
